@@ -18,6 +18,13 @@ class Node
       @next.add_to_tail(val)
     end
   end
+  def length
+    if @next == nil
+      1
+    else
+      1 + @next.length
+    end
+  end
   def to_s
     if @next == nil
       @val
@@ -30,4 +37,5 @@ end
 head = Node.new("d")
 head.add_to_tail("o")
 head.add_to_tail("g")
+puts head.length
 puts head
