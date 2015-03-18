@@ -18,6 +18,16 @@ class Node
       @next.add_to_tail(val)
     end
   end
+  def remove(val)
+    if @val == val
+      @next
+    else
+      if @next
+        @next = @next.remove(val)
+      end
+      self
+    end
+  end
   def length
     if @next == nil
       1
@@ -37,5 +47,9 @@ end
 head = Node.new("d")
 head.add_to_tail("o")
 head.add_to_tail("g")
+puts head.length
+puts head
+head = head.remove("d")
+head = head.remove("g")
 puts head.length
 puts head
