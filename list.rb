@@ -7,27 +7,45 @@
 # 5. Bonus: Write a function `remove` to remove a node from the list.
 
 class Node
+  attr_accessor :val, :next
+
   def initialize(val)
     @val = val
     @next = nil
-  end
+  end 
   def add_to_tail(val)
     if @next == nil
       @next = Node.new(val)
     else
-      @next.add_to_tail(val)
+      @next.add_to_tail(val) #@ means this.whatever/shorthand
     end
-  end
+  end 
   def to_s
     if @next == nil
-      @val
-    else
-      "#{@val} #{@next}"
-    end
-  end
+    @val
+  else 
+    "#{@val} #{@next}"
+  end 
 end
+
+    def length
+    if @next == nil
+      1
+    else 
+      1 + @next.length
+  end 
+end 
+end
+
+
 
 head = Node.new("d")
 head.add_to_tail("o")
 head.add_to_tail("g")
-puts head
+head.add_to_tail("g")
+head.add_to_tail("y")
+puts head.length
+puts head.to_s
+
+
+
